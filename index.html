@@ -34,15 +34,8 @@
             margin-bottom: 10px;
         }
 
-        .subject input[type="checkbox"] {
-            transform: scale(1.2);
-            margin-right: 10px;
-        }
-
-        .subject input[type="number"] {
-            width: 60px;
+        .subject select {
             padding: 5px;
-            text-align: center;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -78,21 +71,306 @@
         <h1>학점 계산기</h1>
         <div id="subjects">
             <div class="subject">
-                <input type="checkbox" id="calc1" checked>
                 <label for="calc1">미적분학 I</label>
-                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+                <select id="calc1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
             </div>
             <div class="subject">
-                <input type="checkbox" id="lin" checked>
                 <label for="lin">선형대수학</label>
-                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+                <select id="lin" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
             </div>
             <div class="subject">
-                <input type="checkbox" id="phy" checked>
-                <label for="phy">일반물리학 I</label>
-                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+                <label for="phy1">일반물리학 I</label>
+                <select id="phy1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
             </div>
-            <!-- Add more subjects here -->
+            <div class="subject">
+                <label for="chem1">일반화학 I</label>
+                <select id="chem1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">일반생명과학 I</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">일반물리학실험 I</label>
+                <select id="bio1" data-credit="1">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">일반화학실험 I</label>
+                <select id="bio1" data-credit="1">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">일반생명과학실험 I</label>
+                <select id="bio1" data-credit="1">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">프로그래밍과 문제해결</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">기초역학의 이해</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">기초유기화학학</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">서버 프로그래밍</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">세포생물학</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">유체지구과학</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">생활 속의 정보과학</label>
+                <select id="bio1" data-credit="2">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">전통과학 프로젝트</label>
+                <select id="bio1" data-credit="2">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">한국사</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">문학 II</label>
+                <select id="bio1" data-credit="3">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">고급영어독해</label>
+                <select id="bio1" data-credit="2">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+            <div class="subject">
+                <label for="bio1">전통과학 프로젝트</label>
+                <select id="bio1" data-credit="2">
+                    <option value="4.3">A+</option>
+                    <option value="4.0">A0</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3.0">B0</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2.0">C0</option>
+                    <option value="1.7">C-</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+        
         </div>
 
         <button class="btn" onclick="calculateGPA()">계산하기</button>
@@ -102,26 +380,26 @@
 
     <script>
         function calculateGPA() {
-            const subjects = document.querySelectorAll('.subject');
-            let totalGrade = 0;
-            let count = 0;
+            const subjects = document.querySelectorAll('.subject select');
+            let totalGradePoints = 0;
+            let totalCredits = 0;
 
             subjects.forEach(subject => {
-                const checkbox = subject.querySelector('input[type="checkbox"]');
-                const gradeInput = subject.querySelector('input[type="number"]');
+                const grade = parseFloat(subject.value);
+                const credits = parseInt(subject.getAttribute('data-credit'));
 
-                if (checkbox.checked && gradeInput.value) {
-                    totalGrade += parseFloat(gradeInput.value);
-                    count++;
+                if (!isNaN(grade)) {
+                    totalGradePoints += grade * credits;
+                    totalCredits += credits;
                 }
             });
 
             const result = document.getElementById('result');
-            if (count > 0) {
-                const gpa = (totalGrade / count).toFixed(2);
+            if (totalCredits > 0) {
+                const gpa = (totalGradePoints / totalCredits).toFixed(2);
                 result.textContent = `평균 학점: ${gpa}`;
             } else {
-                result.textContent = '선택된 과목이 없거나 학점을 입력하지 않았습니다.';
+                result.textContent = '선택된 과목이 없거나 성적을 입력하지 않았습니다.';
             }
         }
     </script>
