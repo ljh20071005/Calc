@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점 계산기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subject {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .subject input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-right: 10px;
+        }
+
+        .subject input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05) translateX(3px);
+            background-color: #555;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>학점 계산기</h1>
+        <div id="subjects">
+            <div class="subject">
+                <input type="checkbox" id="calc1" checked>
+                <label for="calc1">미적분학 I</label>
+                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+            </div>
+            <div class="subject">
+                <input type="checkbox" id="lin" checked>
+                <label for="lin">선형대수학</label>
+                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+            </div>
+            <div class="subject">
+                <input type="checkbox" id="phy" checked>
+                <label for="phy">일반물리학 I</label>
+                <input type="number" placeholder="학점" min="0" max="4.3" step="0.1">
+            </div>
+            <!-- Add more subjects here -->
+        </div>
+
+        <button class="btn" onclick="calculateGPA()">계산하기</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateGPA() {
+            const subjects = document.querySelectorAll('.subject');
+            let totalGrade = 0;
+            let count = 0;
+
+            subjects.forEach(subject => {
+                const checkbox = subject.querySelector('input[type="checkbox"]');
+                const gradeInput = subject.querySelector('input[type="number"]');
+
+                if (checkbox.checked && gradeInput.value) {
+                    totalGrade += parseFloat(gradeInput.value);
+                    count++;
+                }
+            });
+
+            const result = document.getElementById('result');
+            if (count > 0) {
+                const gpa = (totalGrade / count).toFixed(2);
+                result.textContent = `평균 학점: ${gpa}`;
+            } else {
+                result.textContent = '선택된 과목이 없거나 학점을 입력하지 않았습니다.';
+            }
+        }
+    </script>
+</body>
+</html>
